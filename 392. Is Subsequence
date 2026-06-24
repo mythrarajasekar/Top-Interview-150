@@ -1,1 +1,16 @@
 
+class Solution {
+    public boolean isSubsequence(String s, String t) {
+        for (int i = 0; i < s.length(); i++) {
+            int pos = t.indexOf(s.charAt(i));
+
+            if (pos == -1) {
+                return false;
+            }
+
+            t = t.substring(pos + 1);
+        }
+
+        return true;
+    }
+}
